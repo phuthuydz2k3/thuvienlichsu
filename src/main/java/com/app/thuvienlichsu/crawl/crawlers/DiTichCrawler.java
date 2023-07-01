@@ -47,7 +47,7 @@ public class DiTichCrawler extends SCrawler implements ICrawler {
             String relativeUrl = nextElement.attr("href");
             completeUrl = "https://nguoikesu.com" + relativeUrl;
             // Debugger
-            System.out.println(completeUrl);
+//            System.out.println(completeUrl);
             int maxRetries = 3;
             int retryCount = 0;
             boolean success = false;

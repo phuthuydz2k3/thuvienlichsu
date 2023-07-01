@@ -49,7 +49,7 @@ public class SuKienCrawler extends SCrawler implements ICrawler {
             String relativeUrl = nextElement.attr("href");
             // building the complete URL of the next page
             completeUrl =  "https://nguoikesu.com" + relativeUrl;
-            System.out.println(completeUrl);
+//            System.out.println(completeUrl);
             String historicalEventCode = getCodeFromUrl(completeUrl);
 
             try {

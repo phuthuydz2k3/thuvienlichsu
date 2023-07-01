@@ -82,7 +82,7 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
         ArrayList<Model> nhanVatList = new ArrayList<>();
 
         while (nhanVatUrl != null) {
-            System.out.println(baseUrl + nhanVatUrl);
+//            System.out.println(baseUrl + nhanVatUrl);
             boolean isConnected = false;
             while (!isConnected) {
                 try {
@@ -136,7 +136,7 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
             Set<String> nhanVatLienQuan = new HashSet<>();
             Set<String> diaDanhLienQuan = new HashSet<>();
             Set<String> thoiKyLienQuan = new HashSet<>();
-            Elements aTags = doc.select("div[itemprop=articleBody].com-content-article__body a");
+            Elements aTags = doc.select("div.com-content-article__body a");
             for (Element aTag : aTags) {
                 String href = aTag.attr("href");
                 if (href.isEmpty() || href.startsWith("#")) continue;
@@ -177,7 +177,7 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
         Document doc;
 
         for (NhanVatModel nhanVat : nhanVatList) {
-            System.out.println(baseUrl+nhanVatUrl);
+//            System.out.println(baseUrl+nhanVatUrl);
             nhanVatUrl = nhanVat.getTenModel().replace(" ", "_");
             try {
                 doc =  Jsoup.connect(baseUrl+nhanVatUrl).get();
