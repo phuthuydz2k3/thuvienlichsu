@@ -37,7 +37,7 @@ public class NhanVatToThoiKy
     public void linkNhanVatToThoiKy()
     {
         Map<String, List<String>> nhanVatToThoiKy = generateHashMap();
-        System.out.println(nhanVatToThoiKy);
+//        System.out.println(nhanVatToThoiKy);
         NhanVatCrawler nhanVatCrawler = new NhanVatCrawler();
         List<NhanVatModel> nhanVatList = nhanVatCrawler
                 .loader(Config.TEMP_NHAN_VAT_FILENAME,  new TypeToken<List<NhanVatModel>>() {});

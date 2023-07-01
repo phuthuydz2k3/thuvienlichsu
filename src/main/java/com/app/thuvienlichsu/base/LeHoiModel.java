@@ -102,24 +102,24 @@ public class LeHoiModel extends Model
         }
 
         // Add the related figures
-        if (this.nhanVatLienQuan != null)
-        {
-            htmlBuilder.append("<h2>Nhân Vật Liên Quan</h2>");
-            htmlBuilder.append("<ul>");
-            htmlBuilder.append("<li>").append(this.nhanVatLienQuan).append("</li>");
-            htmlBuilder.append("</ul>");
-        }
-
-        if (this.diTichLienQuan != null)
-        {
-            htmlBuilder.append("<h2>Di Tích Liên Quan</h2>");
-            htmlBuilder.append("<ul>");
-            for (String diTich : this.diTichLienQuan)
-            {
-                htmlBuilder.append("<li>").append(diTich).append("</li>");
-            }
-            htmlBuilder.append("</ul>");
-        }
+//        if (this.nhanVatLienQuan != null)
+//        {
+//            htmlBuilder.append("<h2>Nhân Vật Liên Quan</h2>");
+//            htmlBuilder.append("<ul>");
+//            htmlBuilder.append("<li>").append(this.nhanVatLienQuan).append("</li>");
+//            htmlBuilder.append("</ul>");
+//        }
+//
+//        if (this.diTichLienQuan != null)
+//        {
+//            htmlBuilder.append("<h2>Di Tích Liên Quan</h2>");
+//            htmlBuilder.append("<ul>");
+//            for (String diTich : this.diTichLienQuan)
+//            {
+//                htmlBuilder.append("<li>").append(diTich).append("</li>");
+//            }
+//            htmlBuilder.append("</ul>");
+//        }
 
         // Close the HTML structure
         htmlBuilder.append("</body>");
