@@ -42,7 +42,7 @@ public class LeHoiToDiTich
     public void LinkLeHoiToDiTich()
     {
         Map<String, List<String>> hashMap = generateHashMap();
-        System.out.println(hashMap);
+//        System.out.println(hashMap);
 
         LeHoiCrawler leHoiCrawler = new LeHoiCrawler();
         List<LeHoiModel> leHoiList = leHoiCrawler.loader(Config.TEMP_LE_HOI_FILENAME, new TypeToken<List<LeHoiModel>>() {});
@@ -59,7 +59,7 @@ public class LeHoiToDiTich
                 if (key.contains(leHoi.getCode()) || leHoi.getCode().contains(key))
                 {
                     leHoi.setDiTichLienQuan(value);
-                    System.out.println(key + value);
+//                    System.out.println(key + value);
 
                 }
             });
