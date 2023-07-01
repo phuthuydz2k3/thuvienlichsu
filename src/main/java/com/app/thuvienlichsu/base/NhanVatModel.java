@@ -1,9 +1,10 @@
 package com.app.thuvienlichsu.base;
 
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -85,113 +86,73 @@ public class NhanVatModel extends Model
         htmlBuilder.append(".table-container { text-align: left; }");
         htmlBuilder.append("</style>");
 
-        // Add the infobox
-        if (this.thongTin != null)
-        {
-            htmlBuilder.append("<h2>Thông tin nhân vật</h2>");
-            htmlBuilder.append("<table class=\"table-container\">");
-            for (List<String> info : this.thongTin) {
-                htmlBuilder.append("<tr>");
-                if (info.size() == 1) htmlBuilder.append("<th colspan=\"2\">");
-                else htmlBuilder.append("<th scope=\"row\">");
-                htmlBuilder.append(info.get(0)).append("</th>");
-                htmlBuilder.append("<td>");
-                for (int i = 1; i < info.size(); i++) {
-                    if (i > 1) htmlBuilder.append("<br>");
-                    htmlBuilder.append(info.get(i));
-                }
-                htmlBuilder.append("</td>");
-                htmlBuilder.append("</tr>");
-            }
-            htmlBuilder.append("</table>");
-        }
-
-//        htmlBuilder.append("<h2>Related Periods</h2>");
-//        htmlBuilder.append("<ul>");
-//        for (String figure : this.cacThoiKyLienQuan) {
-//            htmlBuilder.append("<li>").append(figure).append("</li>");
-//        }
-//        htmlBuilder.append("</ul>");
-
-        // Add the description
         htmlBuilder.append("<h2>Description</h2>");
         if (this.moTa != null) {
             for (String desc : this.moTa) {
                 htmlBuilder.append("<p>").append(desc).append("</p>");
             }
         }
-
-
-//        // Add the related figures
-//        htmlBuilder.append("<h2>Related Figures</h2>");
-//        if (this.cacNhanVatLienQuan != null) {
-//            htmlBuilder.append("<ul>");
-//            for (String figure : this.cacNhanVatLienQuan) {
-//                htmlBuilder.append("<li>").append(figure).append("</li>");
-//            }
-//            htmlBuilder.append("</ul>");
-//        }
-//
-//
-//        // Add the related places
-//        htmlBuilder.append("<h2>Related Places</h2>");
-//        if (this.cacDiTichLienQuan != null) {
-//            htmlBuilder.append("<ul>");
-//            for (String place : this.cacDiTichLienQuan) {
-//                htmlBuilder.append("<li>").append(place).append("</li>");
-//            }
-//            htmlBuilder.append("</ul>");
-//        }
-//
-//
-//        // Add the related time periods
-//        htmlBuilder.append("<h2>Related Time Periods</h2>");
-//        if (this.cacThoiKyLienQuan != null) {
-//            htmlBuilder.append("<ul>");
-//            for (String timePeriod : this.cacNhanVatLienQuan) {
-//                htmlBuilder.append("<li>").append(timePeriod).append("</li>");
-//            }
-//            htmlBuilder.append("</ul>");
-//        }
-
-
-        // Close the HTML structure
         htmlBuilder.append("</body>");
         htmlBuilder.append("</html>");
 
         return htmlBuilder.toString();
     }
-    private int getNumberOfCols(){
-        int colsCnt = 0;
-        for (List<String> row : thongTin){
-            colsCnt = Math.max(colsCnt, row.size());
-        }
-        return colsCnt;
-    }
-    public TableView<InfoLine> infoTable(){
+    public GridPane getAnotherInfoTable(){
         if (this.thongTin == null) return null;
-        TableView<InfoLine> table = new TableView<>();
-//        table.setTableMenuButtonVisible(false);
-        int colsCnt = getNumberOfCols();
-        if (colsCnt >= 1) {
-            TableColumn<InfoLine, String> fieldNameColumn = new TableColumn<>("Thông Tin");
-            fieldNameColumn.setCellValueFactory(new PropertyValueFactory<InfoLine, String>("fieldName"));
-            table.getColumns().add(fieldNameColumn);
-        }
-        if (colsCnt >= 2) {
-            TableColumn<InfoLine, String> sourceNKSColumn = new TableColumn<>("Chi tiết (nguoikesu)");
-            sourceNKSColumn.setCellValueFactory(new PropertyValueFactory<InfoLine, String>("sourceNKS"));
-            table.getColumns().add(sourceNKSColumn);
-        }
-        if (colsCnt >= 3) {
-            TableColumn<InfoLine, String> sourceWikiColumn = new TableColumn<>("Chi tiết (wikipedia)");
-            sourceWikiColumn.setCellValueFactory(new PropertyValueFactory<InfoLine, String>("sourceWiki"));
-            table.getColumns().add(sourceWikiColumn);
-        }
+        GridPane gridPane = new GridPane();
+        gridPane.setPadding(new Insets(10));
+        gridPane.setHgap(20);
+        gridPane.setVgap(10);
+        // Create column constraints
+        ColumnConstraints column1 = new ColumnConstraints();
+        column1.setPrefWidth(80);
+
+        ColumnConstraints column2 = new ColumnConstraints();
+        column2.setPrefWidth(160);
+
+
+        ColumnConstraints column3 = new ColumnConstraints();
+        column3.setPrefWidth(160);
+
+
+        // Apply column constraints to the GridPane
+        gridPane.getColumnConstraints().addAll(column1, column2, column3);
+        int rowCnt = 0;
         for (List<String> row : thongTin){
+            Label fieldName = null, sourceNKS = null, sourceWiki = null;
+            if (row.size() >= 1) {
+                fieldName = createWrappedLabel(row.get(0));
+                fieldName.setStyle("-fx-font-weight: bold;");
+            }
+            if (row.size() >= 2)
+                sourceNKS = createWrappedLabel(row.get(1));
+            if (row.size() >= 3)
+                sourceWiki = createWrappedLabel(row.get(2));
+            if (row.size() == 1) GridPane.setColumnSpan(fieldName, 3);
+            if (row.size() == 2) GridPane.setColumnSpan(sourceNKS, 2);
+            if (fieldName != null) gridPane.add(fieldName, 0, rowCnt);
+            if (sourceNKS != null) gridPane.add(sourceNKS, 1, rowCnt);
+            if (sourceWiki != null) gridPane.add(sourceWiki, 2, rowCnt);
             System.out.println(row);
-            table.getItems().add(new InfoLine(row));
+            System.out.println(fieldName);
+            System.out.println(sourceNKS);
+            System.out.println(sourceWiki);
+            rowCnt += 1;
         }
-        return table;
+        return gridPane;
+
+    }
+
+    private Label createWrappedLabel(String text) {
+        Label label = new Label();
+        label.setTextAlignment(TextAlignment.JUSTIFY);
+        label.setWrapText(true);
+
+        TextFlow textFlow = new TextFlow();
+        Text textNode = new Text(text);
+        textFlow.getChildren().add(textNode);
+        label.setGraphic(textFlow);
+
+        return label;
     }
 }

@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -41,13 +42,20 @@ public class NhanVatController extends GeneralController implements Initializabl
     }
     @FXML
     public void showNhanVatDetail() {
+        tableContent.getChildren().clear();
         NhanVatModel nhanVat = (NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat());
-        TableView<InfoLine> table = nhanVat.infoTable();
-        if (table != null) tableContent.getChildren().add(table);
-        showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat()));
+        GridPane infoTable = nhanVat.getAnotherInfoTable();
+        if (infoTable != null) {
+            tableContent.getChildren().add(infoTable);
+        }
+        showDanhSachLienQuan(nhanVat);
     }
     public void showNhanVatDetail(String nhanVatName) {
-        showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName));
+        tableContent.getChildren().clear();
+        NhanVatModel nhanVat = (NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat(), nhanVatName);
+        GridPane infoTable = nhanVat.getAnotherInfoTable();
+        if (infoTable != null) tableContent.getChildren().add(infoTable);
+        showDanhSachLienQuan(nhanVat);
     }
     private void showDanhSachLienQuan(NhanVatModel nhanVat){
         resetDanhSachLienQuan();

@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5495f9b4-d542-479d-821c-89fc7295bfa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/InfoLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/GridPaneColumnWidthExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/GridViewExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/nhanVat.json" beforeDir="false" afterPath="$PROJECT_DIR$/database/nhanVat.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/NhanVatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/NhanVatModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/GeneralController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/NhanVatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/NhanVatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/nhan-vat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/nhan-vat.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +57,53 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.app.thuvienlichsu" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ThuVienLS">
+    <configuration name="GridPaneColumnWidthExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.thuvienlichsu.GridPaneColumnWidthExample" />
+      <module name="ThuVienLichSu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.thuvienlichsu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GridViewExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.thuvienlichsu.GridViewExample" />
+      <module name="ThuVienLichSu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.thuvienlichsu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HorizontalLineExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.app.thuvienlichsu.HorizontalLineExample" />
+      <module name="ThuVienLichSu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.app.thuvienlichsu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ThuVienLS" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.app.thuvienlichsu.tvlsApplication" />
       <module name="ThuVienLichSu" />
@@ -70,6 +111,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ThuVienLS" />
+      <item itemvalue="Application.GridPaneColumnWidthExample" />
+      <item itemvalue="Application.GridViewExample" />
+      <item itemvalue="Application.HorizontalLineExample" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GridPaneColumnWidthExample" />
+        <item itemvalue="Application.HorizontalLineExample" />
+        <item itemvalue="Application.GridViewExample" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
