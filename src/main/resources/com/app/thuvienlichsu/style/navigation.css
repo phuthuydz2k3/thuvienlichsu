@@ -1,0 +1,125 @@
+.root {
+    -button-color: #747f8d;
+    -hover-button-color: #2e3338; 
+
+    -purple-color: #5865F2;
+    -hover-purple-color: #4752C4;
+
+    -text-color: #555c5d;
+    -hover-text-color: #2e3338;  
+
+    -gray-color: #e6e6e6;
+    -title-color: #060607;
+    -hover-background-color: #D4D7DC;
+}
+
+.first-color {
+    -fx-background-color: white;
+}
+
+.second-color {
+    -fx-background-color: #f2f3f5;
+}
+
+.third-color {
+    -fx-background-color: #e3e5e8;
+}
+
+/* ========================= Button ========================= */
+
+.button {
+    -fx-background-color: none;
+    -fx-text-fill: -text-color;
+    -fx-font-size: 11;
+}
+
+.button:hover {
+    -fx-background-color: -hover-background-color;
+    -fx-text-fill: -hover-text-color;
+    -fx-cursor: hand;
+}
+
+.button.active {
+     -fx-background-color: -hover-background-color;
+     -fx-text-fill: -hover-text-color;
+     -fx-cursor: hand;
+}
+
+.button-favicon {
+    -fx-graphic: url('../media/normal/history-app.png');
+}
+
+.button-favicon:hover {
+    -fx-background-color: none;
+    -fx-text-fill: -text-color;
+    -fx-font-size: 11;
+    -fx-cursor: default;
+}
+
+
+.button-thoi-ky {
+    -fx-graphic: url('../media/normal/thoi-ky.png');
+}
+
+.button-thoi-ky:hover {
+    -fx-graphic: url('../media/hover/thoi-ky.png');
+}
+
+.button-thoi-ky.active {
+    -fx-graphic: url('../media/hover/thoi-ky.png');
+}
+
+.button-nhan-vat {
+    -fx-graphic: url('../media/normal/nhan-vat.png');
+}
+
+.button-nhan-vat:hover {
+    -fx-graphic: url('../media/hover/nhan-vat.png');
+}
+
+.button-nhan-vat.active {
+    -fx-graphic: url('../media/hover/nhan-vat.png');
+}
+
+.button-su-kien {
+    -fx-graphic: url('../media/normal/su-kien.png');
+}
+
+.button-su-kien:hover {
+    -fx-graphic: url('../media/hover/su-kien.png');
+}
+
+.button-su-kien.active {
+    -fx-graphic: url('../media/hover/su-kien.png');
+}
+
+.button-di-tich {
+    -fx-graphic: url('../media/normal/di-tich.png');
+}
+
+.button-di-tich:hover {
+    -fx-graphic: url('../media/hover/di-tich.png');
+}
+
+.button-di-tich.active {
+    -fx-graphic: url('../media/hover/di-tich.png');
+}
+
+.button-le-hoi {
+    -fx-graphic: url('../media/normal/le-hoi.png');
+}
+.button-crawl.active {
+    -fx-graphic: url('../media/hover/crawl.png');
+}
+
+.button-crawl {
+    -fx-graphic: url('../media/normal/crawl.png');
+}
+
+.button-le-hoi:hover {
+    -fx-graphic: url('../media/hover/le-hoi.png');
+}
+
+.button-le-hoi.active {
+    -fx-graphic: url('../media/hover/le-hoi.png');
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="second-color" stylesheets="@style/search.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.app.thuvienlichsu.controllers.DiTichController">
+    <AnchorPane layoutY="-3.0" prefHeight="459.0" prefWidth="257.0" styleClass="second-color" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-3.0">
+        <TextField fx:id="searchField" layoutX="19.0" layoutY="18.0" onKeyReleased="#diTichSearchFieldAction" prefHeight="35.0" prefWidth="219.0" promptText="Tra từ" />
+        <VBox layoutX="19.0" layoutY="58.0" prefHeight="525.0" prefWidth="219.0" style="-fx-background-radius: 3;" styleClass="third-color" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="58.0">
+            <ListView fx:id="listView" onMouseClicked="#showDiTichDetail" prefHeight="529.0" prefWidth="236.0" style="-fx-background-color: none;" />
+        </VBox>
+    </AnchorPane>
+    <ScrollPane layoutX="254.0" layoutY="14.0" prefHeight="565.0" prefWidth="492.0" style="-fx-background-radius: 3;" styleClass="first-color">
+        <VBox>
+            <Label layoutX="25.0" layoutY="17.0" prefHeight="40.0" styleClass="title-meaning" text="Di Tích Lịch Sử" textFill="#902929">
+                <style>
+                    -fx-font-weight: bold;
+                </style>
+                <font>
+                    <Font size="10.0" />
+                </font>
+            <padding>
+               <Insets left="5.0" />
+            </padding>
+            </Label>
+            <AnchorPane layoutX="10.0" layoutY="87.0" prefHeight="468.0" prefWidth="472.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="87.0">
+                <WebView fx:id="definitionView" prefHeight="478.0" prefWidth="473.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            </AnchorPane>
+            <Label fx:id="nhanVatLienQuanLabel" text="Nhân vật liên quan" visible="false">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+                <VBox fx:id="cacNhanVatLienQuan" spacing="10.0">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            <Label fx:id="thoiKyLienQuanLabel" text="Nhân vật liên quan" visible="false">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+            <VBox fx:id="cacThoiKyLienQuan" spacing="10.0">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+            </VBox>
+            <Label fx:id="leHoiLienQuanLabel" text="Nhân vật liên quan" visible="false">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Label>
+            <VBox fx:id="cacLeHoiLienQuan" spacing="10.0">
+                <padding>
+                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                </padding>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</AnchorPane>
