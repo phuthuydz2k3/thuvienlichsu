@@ -61,8 +61,15 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
                     if (tdElement != null) info.add(tdElement.text());
                 }
             }
-                    
-            infobox.add(info);
+
+            List<String> refinedInfo = new ArrayList<>();
+            if (info.size() == 1) refinedInfo.addAll(info);
+            else {
+                String combined = String.join(" \n", info.subList(1, info.size()));
+                refinedInfo.add(info.get(0));
+                refinedInfo.add(combined);
+            }
+            infobox.add(refinedInfo);
         }     
         return infobox;
     }
@@ -155,7 +162,6 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
                 nhanVatUrl = nextPage.attr("href");
             } else {
                 nhanVatUrl = null;
-                System.out.println("Next page link not found.");
             }
         }
         
@@ -193,16 +199,21 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
     }
 
     public static boolean shouldMerge(List<String> info1, List<String> info2) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 1; i < info1.size(); i++) {
-            stringBuilder.append(info1.get(i));
-        }
-        String str1 = stringBuilder.toString();
-        stringBuilder = new StringBuilder();
-        for (int i = 1; i < info2.size(); i++) {
-            stringBuilder.append(info2.get(i));
-        }
-        String str2 = stringBuilder.toString();
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (int i = 1; i < info1.size(); i++) {
+//            stringBuilder.append(info1.get(i));
+//        }
+//        String str1 = stringBuilder.toString();
+//        stringBuilder = new StringBuilder();
+//        for (int i = 1; i < info2.size(); i++) {
+//            stringBuilder.append(info2.get(i));
+//        }
+//        String str2 = stringBuilder.toString();
+
+        String str1 = info1.get(1);
+        str1.replaceAll(" \n", "");
+        String str2 = info2.get(1);
+        str2.replaceAll(" \n", "");
 
         // Tạo một HashMap để lưu số lần xuất hiện của chữ cái và số trong str1
         Map<Character, Integer> occurrencesMap = new HashMap<>();
@@ -230,10 +241,11 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
             else str2Count -= count;
         }
 
+        int totalDiff = str1Count + str2Count;
         float rate = (float) 0.3;
         if (Math.max(str1.length(),str2.length()) < 20) rate = (float) 0.8;
-        if ((float)str1Count > (float)(rate*str2.length())) return true;
-        if ((float)str2Count > (float)(rate*str1.length())) return true;
+        if ((float)totalDiff > (float)(rate*str2.length())) return true;
+        if ((float)totalDiff > (float)(rate*str1.length())) return true;
         return false;
     }
 
@@ -262,9 +274,14 @@ public class NhanVatCrawler extends SCrawler implements ICrawler {
                 if (table1.get(i).get(0).equalsIgnoreCase(table2.get(j).get(0))) {
                     if (table2.get(j).size() == 1 || table2.get(j).get(1).isEmpty()) break;
                     if (shouldMerge(table1.get(i), table2.get(j)) ){
-                        table1.get(i).add("(Theo nguoikesu.com)");
-                        table2.get(j).add("(Theo wikipedia.org)");
-                        table2.get(j).set(0, "</td> <td>");
+                        int lastIndex1 = table1.get(i).size() - 1;
+                        int lastIndex2 = table2.get(j).size() - 1;
+                        table1.get(i).set(lastIndex1, table1.get(i).get(lastIndex1) + " \n(Theo nguoikesu.com)");
+                        table2.get(j).set(lastIndex2, table2.get(j).get(lastIndex2) + " \n(Theo wikipedia.org)");
+                        table2.get(j).remove(0);
+//                        table1.get(i).add("(Theo nguoikesu.com)");
+//                        table2.get(j).add("(Theo wikipedia.org)");
+//                        table2.get(j).set(0, "</td> <td>");
                         table1.get(i).addAll(table2.get(j));
                     }
                     break;

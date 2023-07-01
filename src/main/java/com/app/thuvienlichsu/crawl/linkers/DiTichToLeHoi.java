@@ -39,7 +39,7 @@ public class DiTichToLeHoi
     public void LinkDiTichToLeHoi()
     {
         Map<String, List<String>> hashMap = DiTichToLeHoi();
-        System.out.println(hashMap);
+//        System.out.println(hashMap);
         DiTichCrawler diTichCrawler = new DiTichCrawler();
         List<DiTichModel> diTichList = diTichCrawler
                 .loader(Config.TEMP_DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});
@@ -49,7 +49,7 @@ public class DiTichToLeHoi
                 if (key.contains(diTich.getCode()) || diTich.getCode().contains(key))
                 {
                     diTich.setCacLeHoiLienQuan(value);
-                    System.out.println(diTich.getCode() + value);
+//                    System.out.println(diTich.getCode() + value);
 
                 }
             });

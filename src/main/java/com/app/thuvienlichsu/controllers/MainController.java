@@ -190,18 +190,28 @@ public class MainController implements Initializable {
                 boolean linkSuccess = false;
                 TimeUnit.SECONDS.sleep(3);
 
-
 //                try {
 //                    crawlAll.crawl();
 //                    crawlSuccess = true;
-//                    crawlAll.link();
-//                    linkSuccess = true;
 //                } catch (Exception e) {
 //                    e.printStackTrace();
 //                }
 //
-//                if (crawlSuccess && linkSuccess) {
-//                    crawlAll.overwriteDatabase();
+//                if (crawlSuccess) {
+//                    try {
+//                        crawlAll.link();
+//                        linkSuccess = true;
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//
+//                if (linkSuccess) {
+//                    try {
+//                        crawlAll.overwriteDatabase();
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    }
 //                }
 
                 return null;

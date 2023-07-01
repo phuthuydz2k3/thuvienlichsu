@@ -31,7 +31,7 @@ public class DiTichToThoiKy
             }
         }
 
-        System.out.println(hashMap);
+//        System.out.println(hashMap);
         return hashMap;
     }
 
