@@ -1,5 +1,10 @@
 package com.app.thuvienlichsu.base;
 
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -155,5 +160,38 @@ public class NhanVatModel extends Model
         htmlBuilder.append("</html>");
 
         return htmlBuilder.toString();
+    }
+    private int getNumberOfCols(){
+        int colsCnt = 0;
+        for (List<String> row : thongTin){
+            colsCnt = Math.max(colsCnt, row.size());
+        }
+        return colsCnt;
+    }
+    public TableView<InfoLine> infoTable(){
+        if (this.thongTin == null) return null;
+        TableView<InfoLine> table = new TableView<>();
+//        table.setTableMenuButtonVisible(false);
+        int colsCnt = getNumberOfCols();
+        if (colsCnt >= 1) {
+            TableColumn<InfoLine, String> fieldNameColumn = new TableColumn<>("Thông Tin");
+            fieldNameColumn.setCellValueFactory(new PropertyValueFactory<InfoLine, String>("fieldName"));
+            table.getColumns().add(fieldNameColumn);
+        }
+        if (colsCnt >= 2) {
+            TableColumn<InfoLine, String> sourceNKSColumn = new TableColumn<>("Chi tiết (nguoikesu)");
+            sourceNKSColumn.setCellValueFactory(new PropertyValueFactory<InfoLine, String>("sourceNKS"));
+            table.getColumns().add(sourceNKSColumn);
+        }
+        if (colsCnt >= 3) {
+            TableColumn<InfoLine, String> sourceWikiColumn = new TableColumn<>("Chi tiết (wikipedia)");
+            sourceWikiColumn.setCellValueFactory(new PropertyValueFactory<InfoLine, String>("sourceWiki"));
+            table.getColumns().add(sourceWikiColumn);
+        }
+        for (List<String> row : thongTin){
+            System.out.println(row);
+            table.getItems().add(new InfoLine(row));
+        }
+        return table;
     }
 }

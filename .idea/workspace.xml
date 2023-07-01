@@ -5,85 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5495f9b4-d542-479d-821c-89fc7295bfa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/.temp/diTich.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/.temp/leHoi.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/.temp/nhanVat.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/.temp/suKien.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/.temp/thoiKy.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/diTich.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/leHoi.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/nhanVat.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/suKien.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/thoiKy.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/DiTichModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/LeHoiModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/LoadData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/NhanVatModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/SuKienModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/ThoiKyModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/DiTichController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/GeneralController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/LeHoiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/NhanVatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/SuKienController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/ThoiKyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/CrawlAll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/DiTichCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/ICrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/LeHoiCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/NhanVatCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/SCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/SuKienCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/crawlers/ThoiKyCrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/linkers/DiTichToLeHoi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/linkers/DiTichToThoiKy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/linkers/LeHoiToDiTich.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/crawl/linkers/NhanVatToThoiKy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/tvlsApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/util/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/util/Encode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/util/StringUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/util/UrlDecode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/di-tich.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/le-hoi.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/crawl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/di-tich.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/history.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/le-hoi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/nhan-vat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/su-kien.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/thoi-ky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/hover/translate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/crawl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/di-tich.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/history-app.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/le-hoi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/nhan-vat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/search-bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/su-kien.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/media/normal/thoi-ky.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/nhan-vat.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/splash_screen.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/style/navigation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/style/search.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/style/setting.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/style/translate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/su-kien.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/thoi-ky.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/tvls-main.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/InfoLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/NhanVatModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/base/NhanVatModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/GeneralController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/GeneralController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/NhanVatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/thuvienlichsu/controllers/NhanVatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/nhan-vat.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/app/thuvienlichsu/nhan-vat.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

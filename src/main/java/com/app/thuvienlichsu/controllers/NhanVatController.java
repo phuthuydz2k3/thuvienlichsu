@@ -1,10 +1,12 @@
 package com.app.thuvienlichsu.controllers;
 
+import com.app.thuvienlichsu.base.InfoLine;
 import com.app.thuvienlichsu.base.Model;
 import com.app.thuvienlichsu.base.NhanVatModel;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -18,6 +20,8 @@ public class NhanVatController extends GeneralController implements Initializabl
     public Label diTichLienQuanLabel;
     public Label nhanVatLienQuanLabel;
     public Label thoiKyLienQuanLabel;
+    public VBox tableContent;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (Model temp : database.getNhanVat()) {
@@ -37,6 +41,9 @@ public class NhanVatController extends GeneralController implements Initializabl
     }
     @FXML
     public void showNhanVatDetail() {
+        NhanVatModel nhanVat = (NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat());
+        TableView<InfoLine> table = nhanVat.infoTable();
+        if (table != null) tableContent.getChildren().add(table);
         showDanhSachLienQuan((NhanVatModel) showDetail((ArrayList<Model>) database.getNhanVat()));
     }
     public void showNhanVatDetail(String nhanVatName) {

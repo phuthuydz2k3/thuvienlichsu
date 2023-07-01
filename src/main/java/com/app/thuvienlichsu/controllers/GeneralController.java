@@ -63,6 +63,12 @@ public class GeneralController implements Initializable {
         definitionView.getEngine().loadContent(meaning, "text/html");
         return resource.get(index);
     }
+    public Model getModel(ArrayList<Model> resource, String spelling){
+        if (spelling == null) {
+            return null;
+        }
+        int index = Collections.binarySearch(resource, new Model(spelling, ""));
+        return resource.get(index);    }
     public void updateWordInListView(String word, int index, ArrayList<Model> res, ArrayList<Model> des) {
         if (index < 0) {
             return;
