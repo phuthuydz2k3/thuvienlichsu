@@ -8,16 +8,13 @@ import com.app.thuvienlichsu.crawl.crawlers.LeHoiCrawler;
 import com.app.thuvienlichsu.util.Config;
 import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LeHoiToDiTich
 {
-    public Map<String, List<String>> generateHashMap()
+    public Map<String, Set<String>> generateHashMap()
     {
-        Map<String, List<String>> hashMap = new HashMap<>();
+        Map<String, Set<String>> hashMap = new HashMap<>();
         DiTichCrawler diTichCrawler = new DiTichCrawler();
         List<DiTichModel> diTichList = diTichCrawler.loader(Config.TEMP_DI_TICH_FILENAME,  new TypeToken<List<DiTichModel>>() {});
 
@@ -29,7 +26,7 @@ public class LeHoiToDiTich
                 {
                     if (!hashMap.containsKey(leHoi))
                     {
-                        hashMap.put(leHoi, new ArrayList<>());
+                        hashMap.put(leHoi, new HashSet<>());
                     }
                     hashMap.get(leHoi).add(diTich.getCode());
                 }
@@ -41,7 +38,7 @@ public class LeHoiToDiTich
 
     public void LinkLeHoiToDiTich()
     {
-        Map<String, List<String>> hashMap = generateHashMap();
+        Map<String, Set<String>> hashMap = generateHashMap();
 //        System.out.println(hashMap);
 
         LeHoiCrawler leHoiCrawler = new LeHoiCrawler();

@@ -3,6 +3,7 @@ package com.app.thuvienlichsu.base;
 import com.app.thuvienlichsu.util.Config;
 
 import java.util.List;
+import java.util.Set;
 
 public class LeHoiModel extends Model
 {
@@ -13,7 +14,7 @@ public class LeHoiModel extends Model
 
     private String diaDanhCode;
 
-    private List<String> diTichLienQuan;
+    private Set<String> diTichLienQuan;
 
     public LeHoiModel(String tenModel, String thoiGian, String diaDiem,
                       String nhanVatLienQuan, String toChucLanDau, List<String> description, String diaDanhCode, String code)
@@ -27,7 +28,7 @@ public class LeHoiModel extends Model
         setCode(code);
     }
 
-    public void setDiTichLienQuan(List<String> diTichLienQuan) {
+    public void setDiTichLienQuan(Set<String> diTichLienQuan) {
         this.diTichLienQuan = diTichLienQuan;
     }
 
