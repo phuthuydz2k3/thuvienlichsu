@@ -238,7 +238,7 @@ public class LeHoiCrawler extends SCrawler implements ICrawler {
         for (Element festival : festivals) {
             String href = festival.selectFirst("a.thumb").attr("href");
             String url = "http://lehoi.info" + href;
-            System.out.println(url);
+//            System.out.println(url);
             String info = festival.selectFirst("div").text().trim();
             List<String> description = new ArrayList<>();
             description.add(info);

@@ -39,7 +39,7 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println(baseUrl+thoiKyUrl);  // Console log
+//            System.out.println(baseUrl+thoiKyUrl);  // Console log
 
             //  Get eraName
             String eraName = doc.selectFirst("h1").text();
@@ -80,7 +80,6 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
             Set<String> historicalDestinationsLinked = new HashSet<>();
             //  Traverse all links to find relative figures
             for (String link : links) {
-                System.out.println(baseUrl+link);
                 ArrayList<String> hrefs = getRelatives(baseUrl+link);
 
                 for (String href : hrefs) {
@@ -125,9 +124,9 @@ public class ThoiKyCrawler extends SCrawler implements ICrawler {
         }
 
         //  Find in article body
-        Element articleBody = doc.selectFirst("div[itemprop=articleBody]");
+        Element articleBody = doc.selectFirst("div.com-content-article__body");
         if (articleBody != null) {
-            Elements aTags = doc.selectFirst("div[itemprop=articleBody]").select("a");
+            Elements aTags = doc.selectFirst("div.com-content-article__body").select("a");
             for (Element aTag : aTags) {
                 String href = aTag.attr("href");
                 if (href.isEmpty() || href.startsWith("#")) continue;
