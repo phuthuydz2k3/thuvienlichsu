@@ -8,7 +8,7 @@ import java.util.Set;
 public class DiTichModel extends Model{
     private Set<String> cacNhanVatLienQuan;
     private Set<String> cacThoiKyLienQuan;
-    private List<String> cacLeHoiLienQuan;
+    private Set<String> cacLeHoiLienQuan;
 
     public DiTichModel(String tenModel, List<String> moTa, String code, Set<String> cacNhanVatLienQuan)
     {
@@ -16,10 +16,10 @@ public class DiTichModel extends Model{
         setCode(code);
         setCacNhanVatLienQuan(cacNhanVatLienQuan);
         setCacThoiKyLienQuan(new HashSet<>());
-        setCacLeHoiLienQuan(new ArrayList<>());
+        setCacLeHoiLienQuan(new HashSet<>());
     }
 
-    public void setCacLeHoiLienQuan(List<String> cacLeHoiLienQuan) {
+    public void setCacLeHoiLienQuan(Set<String> cacLeHoiLienQuan) {
         this.cacLeHoiLienQuan = cacLeHoiLienQuan;
     }
 
@@ -39,7 +39,7 @@ public class DiTichModel extends Model{
         this.cacThoiKyLienQuan = cacThoiKyLienQuan;
     }
 
-    public List<String> getCacLeHoiLienQuan() {
+    public Set<String> getCacLeHoiLienQuan() {
         return cacLeHoiLienQuan;
     }
 

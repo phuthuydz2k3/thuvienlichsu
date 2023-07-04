@@ -65,7 +65,7 @@ public class CrawlAll
         diTichToThoiKy.diaDanhToThoiKy();
 
         DiTichToLeHoi diTichToLeHoi = new DiTichToLeHoi();
-        diTichToLeHoi.DiTichToLeHoi();
+        diTichToLeHoi.LinkDiTichToLeHoi();
 
         LeHoiToDiTich leHoiToDiTich = new LeHoiToDiTich();
         leHoiToDiTich.LinkLeHoiToDiTich();
