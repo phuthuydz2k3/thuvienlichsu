@@ -35,10 +35,11 @@ public class DiTichToThoiKy
         return hashMap;
     }
 
-    public void diaDanhToThoiKy()
+    public int diaDanhToThoiKy()
     {
         Map<String, List<String>> diaDanhToThoiKy = generateHashMap();
         DiTichCrawler diaDanhCrawler = new DiTichCrawler();
+        int size = 0;
         List<DiTichModel> diaDanhList = diaDanhCrawler.loader(Config.TEMP_DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});
 
         for (DiTichModel diaDanh : diaDanhList)
@@ -48,12 +49,15 @@ public class DiTichToThoiKy
             {
                 Set<String> set = new HashSet<>(diaDanhToThoiKy.get(diaDanh.getCode()));
                 diaDanh.setCacThoiKyLienQuan(set);
+                size += set.size();
             }
         }
 
         List<Model> models = new ArrayList<>();
         models.addAll(diaDanhList);
         diaDanhCrawler.writeJson(Config.TEMP_DI_TICH_FILENAME, models);
+
+        return size;
     }
 
     public static void main(String[] args)

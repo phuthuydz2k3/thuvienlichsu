@@ -34,13 +34,14 @@ public class NhanVatToThoiKy
         return hashMap;
     }
 
-    public void linkNhanVatToThoiKy()
+    public int linkNhanVatToThoiKy()
     {
         Map<String, List<String>> nhanVatToThoiKy = generateHashMap();
 //        System.out.println(nhanVatToThoiKy);
         NhanVatCrawler nhanVatCrawler = new NhanVatCrawler();
         List<NhanVatModel> nhanVatList = nhanVatCrawler
                 .loader(Config.TEMP_NHAN_VAT_FILENAME,  new TypeToken<List<NhanVatModel>>() {});
+        int size = 0;
 
         for (NhanVatModel nhanVat : nhanVatList)
         {
@@ -48,12 +49,15 @@ public class NhanVatToThoiKy
             {
                 Set<String> set = new HashSet<>(nhanVatToThoiKy.get(nhanVat.getCode()));
                 nhanVat.setCacThoiKyLienQuan(set);
+                size += set.size();
             }
         }
 
         List<Model> models = new ArrayList<>();
         models.addAll(nhanVatList);
         nhanVatCrawler.writeJson(Config.TEMP_NHAN_VAT_FILENAME, models);
+
+        return size;
     }
 
     public static void main(String[] args)

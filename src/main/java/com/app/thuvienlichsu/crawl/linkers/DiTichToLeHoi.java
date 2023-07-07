@@ -33,10 +33,10 @@ public class DiTichToLeHoi
 
         return hashMap;
     }
-    public void LinkDiTichToLeHoi()
+    public Map<String, Set<String>> LinkDiTichToLeHoi()
     {
         Map<String, Set<String>> hashMap = generateHashmap();
-        System.out.println(hashMap);
+//        System.out.println(hashMap);
         DiTichCrawler diTichCrawler = new DiTichCrawler();
         List<DiTichModel> diTichList = diTichCrawler
                 .loader(Config.TEMP_DI_TICH_FILENAME, new TypeToken<List<DiTichModel>>() {});
@@ -46,7 +46,7 @@ public class DiTichToLeHoi
                 if (key.contains(diTich.getCode()) || diTich.getCode().contains(key))
                 {
                     diTich.setCacLeHoiLienQuan(value);
-                    System.out.println(diTich.getCode() + ": " + value);
+//                    System.out.println(diTich.getCode() + ": " + value);
 
                 }
             });
@@ -55,6 +55,8 @@ public class DiTichToLeHoi
         List<Model> models = new ArrayList<>();
         models.addAll(diTichList);
         diTichCrawler.writeJson(Config.TEMP_DI_TICH_FILENAME, models);
+
+        return hashMap;
     }
 
     public static void main(String[] args)

@@ -10,6 +10,8 @@ import com.app.thuvienlichsu.util.Config;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class CrawlAll
 {
@@ -62,16 +64,35 @@ public class CrawlAll
     public void link()
     {
         DiTichToThoiKy diTichToThoiKy = new DiTichToThoiKy();
-        diTichToThoiKy.diaDanhToThoiKy();
+        int link1 = diTichToThoiKy.diaDanhToThoiKy();
 
         DiTichToLeHoi diTichToLeHoi = new DiTichToLeHoi();
-        diTichToLeHoi.LinkDiTichToLeHoi();
+        Map<String, Set<String>> hashMap1 = diTichToLeHoi.LinkDiTichToLeHoi();
+        int link2 = 0;
 
         LeHoiToDiTich leHoiToDiTich = new LeHoiToDiTich();
-        leHoiToDiTich.LinkLeHoiToDiTich();
+        Map<String, Set<String>> hashMap2 = leHoiToDiTich.LinkLeHoiToDiTich();
+        int link3 = 0;
 
         NhanVatToThoiKy nhanVatToThoiKy = new NhanVatToThoiKy();
-        nhanVatToThoiKy.linkNhanVatToThoiKy();
+        int link4 = nhanVatToThoiKy.linkNhanVatToThoiKy();
+
+        for (Map.Entry<String, Set<String>> set : hashMap1.entrySet())
+        {
+            link2 += set.getValue().size();
+        }
+        for (Map.Entry<String, Set<String>> set : hashMap2.entrySet())
+        {
+            for (String string : set.getValue())
+            {
+                if (!hashMap1.containsKey(string))
+                {
+                    link3 += 1;
+                }
+            }
+        }
+
+        System.out.println("Number of links: " + (link1 + link2 + link3 + link4));
     }
 
     public void overwriteDatabase() {
